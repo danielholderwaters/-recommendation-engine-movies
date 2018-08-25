@@ -116,4 +116,5 @@ np.savetxt("foo.csv", user_prediction, delimiter=",")
 np.savetxt("foo2.csv", item_prediction, delimiter=",")
 
 #this last line is also just to ensure the whole thing runs
+#minor change
 print("Program is COMPLETE, mi sybiostro")
