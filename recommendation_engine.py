@@ -1,9 +1,5 @@
 #recommendation engine 
-#written in python
-#this begins with 'copied' code, and my unique contribution comes later down after the triple hash
-#original code from https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/
 #dataset from: https://grouplens.org/datasets/movielens/100k/
-#cd /cygdrive/c/Users/danie/Desktop/PythonCode -----> this is for Cygwin
 #cd /mnt/c/Users/danie/Desktop/PythonCode -----> this is for ConEmu
 #cd C:/Users/danie/Desktop/PythonCode ------> this is for windows Command Line
 #if you want to run the file in ConEmu
@@ -35,28 +31,12 @@ users = pd.read_csv('ml-100k/u.user', sep='|', names=u_cols,encoding='latin-1')
 r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
 ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols,encoding='latin-1')
 
-#used the following print functions to understand the .iat attribute of a pandas df.  
-#later, the method.itertuples calls element 1-3, rather than beginning with 0 and I was confused.  
-#the answer to my confusion: in itertuples, the index is element 0.  I'll say that again.  the index is element 0
-#print(ratings.head())
-#print(ratings.dtypes)
-#print(ratings.iat[0,0])
-#print(ratings.iat[0,0] ,ratings.iat[0,1], ratings.iat[1,0], ratings.iat[1,1])
-
 #Reading items file:
 i_cols = ['movie id', 'movie title' ,'release date','video release date', 'IMDb URL', 'unknown', 'Action', 'Adventure',
 'Animation', 'Children\'s', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy',
 'Film-Noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
 items = pd.read_csv('ml-100k/u.item', sep='|', names=i_cols,
 encoding='latin-1')
-
-
-#print(users.shape)
-#print(users.head())
-#print(ratings.shape)
-#print(ratings.head())
-#print(items.shape)
-#print(items.head())
 
 #importing the test and train datasets
 r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
